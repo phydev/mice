@@ -1,6 +1,19 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def compute_ecdf(x):
+    """
+    computes the empirical cumulative density function for x
+    :param x: column of observations
+    :return A: matrix with the empirical cumulative density function
+    """
+    xc = np.sort(x)
+    yc = np.arange(1, len(xc)+1)/len(xc)
+    
+    A = np.array([xc, yc]).T
+    
+    return A
+
 def gibbs_sampler(x, n_samples, plot=False):
     """
     compute the empirical cumulative density function for the distribution x 
