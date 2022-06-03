@@ -1,5 +1,5 @@
 from pyampute.ampute import MultivariateAmputation
-from mice import *
+from src import *
 
 ma = MultivariateAmputation(seed=42)
 X_amp = ma.fit_transform(df_np)
