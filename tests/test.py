@@ -1,9 +1,15 @@
-from pyampute.ampute import MultivariateAmputation
-from src import *
 
-ma = MultivariateAmputation(seed=42)
-X_amp = ma.fit_transform(df_np)
+def test_sample_data():
+  import pandas as pd
+  from pyampute.ampute import MultivariateAmputation
+  from src import *
+  
+  df = pd.read_csv("data.csv")
+  df_np = df.to_numpy()
+  
+  ma = MultivariateAmputation(seed=42)
+  X_amp = ma.fit_transform(df_np)
 
-df_amp = pd.DataFrame(X_amp, columns=df.columns, dtype=np.float64)
+  df_amp = pd.DataFrame(X_amp, columns=df.columns, dtype=np.float64)
 
-imp = mice(X_amp, 20, 10, 42)
+  imp = mice(X_amp, 20, 10, 42)
