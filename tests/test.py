@@ -13,13 +13,14 @@ def test_sample_data():
 
   df_amp = pd.DataFrame(X_amp, columns=df.columns, dtype=np.float64)
 
-  imp = mice.mice(X_amp, 20, 10, 42)
+  m_imputations = 10
+  n_iterations = 20
+  imp = mice.mice(X_amp, n_iterations, m_imputations, 42)
   
   missing_map = np.isnan(X_amp)
-  
-  for X_imp in imp:
-    
-    targets = df["hn4_qol"][missing_map[:, 3]].to_numpy()
-    predictions = X_imp[missing_map[:, 3], 3]
+  targets = df["hn4_qol"][missing_map[:, 3]].to_numpy()
+
+  for m in range(m_imputations):
+    predictions = imp[m][missing_map[:, 3], 3]
 
     print("RMSE for hn4_qol variable:", np.sqrt(np.mean((predictions-targets)**2)))
