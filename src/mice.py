@@ -1,3 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
 def gibbs_sampler(x, n_samples, plot=False):
     """
     compute the empirical cumulative density function for the distribution x 
