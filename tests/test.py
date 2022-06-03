@@ -1,6 +1,7 @@
 
 def test_sample_data():
   import pandas as pd
+  import numpy as np
   from pyampute.ampute import MultivariateAmputation
   from src import mice
   
