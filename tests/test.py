@@ -17,7 +17,9 @@ def test_sample_data():
   
   missing_map = np.isnan(X_amp)
   
-  targets = df["hn4_qol"][missing_map[:, 3]].to_numpy()
-  predictions = X_imp[missing_map[:, 3], 3]
+  for X_imp in imp:
+    
+    targets = df["hn4_qol"][missing_map[:, 3]].to_numpy()
+    predictions = X_imp[missing_map[:, 3], 3]
 
-  print("RMSE for hn4_qol variable:", np.sqrt(np.mean((predictions-targets)**2)))
+    print("RMSE for hn4_qol variable:", np.sqrt(np.mean((predictions-targets)**2)))
