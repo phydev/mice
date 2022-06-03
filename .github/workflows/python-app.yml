@@ -1,0 +1,17 @@
+name: Build and Deploy
+on: [push]
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Install and Build 🔧
+        run: |
+          pip3 --version
+          pip3 install scikit-learn sklearn numpy pyampute
+      - name: Test 
+        run: |
+          python3 test/test.py
