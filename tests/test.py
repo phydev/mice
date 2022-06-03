@@ -2,7 +2,7 @@
 def test_sample_data():
   import pandas as pd
   from pyampute.ampute import MultivariateAmputation
-  from src import *
+  from src import mice
   
   df = pd.read_csv("data.csv")
   df_np = df.to_numpy()
@@ -12,4 +12,4 @@ def test_sample_data():
 
   df_amp = pd.DataFrame(X_amp, columns=df.columns, dtype=np.float64)
 
-  imp = mice(X_amp, 20, 10, 42)
+  imp = mice.mice(X_amp, 20, 10, 42)
