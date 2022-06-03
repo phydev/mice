@@ -1,3 +1,3 @@
-import tests
+from tests import test
 
-tests.test_sample_data()
+test.test_sample_data()
