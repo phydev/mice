@@ -4,7 +4,7 @@ def test_sample_data():
   from pyampute.ampute import MultivariateAmputation
   from src import mice
   
-  df = pd.read_csv("data.csv")
+  df = pd.read_csv("/home/runner/work/mice_from_scratch/mice_from_scratch/tests/data.csv")
   df_np = df.to_numpy()
   
   ma = MultivariateAmputation(seed=42)
