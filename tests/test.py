@@ -4,8 +4,8 @@ def test_sample_data():
   import numpy as np
   from src import mice
   
-  df = pd.read_csv("/home/runner/work/mice_from_scratch/mice_from_scratch/tests/data.csv")
-  df_amp = pd.read_csv("/home/runner/work/mice_from_scratch/mice_from_scratch/tests/data_amputed.csv")
+  df = pd.read_csv("/home/runner/work/mice/mice/tests/data.csv")
+  df_amp = pd.read_csv("/home/runner/work/mice/mice/tests/data_amputed.csv")
   
   df_np = df.to_numpy()
   X_amp = df_amp.to_numpy()
