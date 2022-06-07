@@ -10,7 +10,7 @@ from pyampute.ampute import MultivariateAmputation
 
 iris = load_iris(as_frame=True, return_X_y=False)["data"]
 ma = MultivariateAmputation()
-X_amp = ma.fit_transform(iris.to_numpy()) # pyampute requires the inpute as numpy array
+X_amp = ma.fit_transform(iris.to_numpy()) # pyampute requires the input as numpy array
 
 ```
 Now we can apply MICE in the amputed dataset
