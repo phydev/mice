@@ -16,7 +16,7 @@ X_amp = ma.fit_transform(iris.to_numpy()) # pyampute requires the inpute as nump
 Now we can apply MICE in the amputed dataset
 ```python
 from src import mice
-imp = mice.mice(X, n_iterations, m_imputations, 42)
+imp = mice.mice(X, n_iterations = 20, m_imputations = 10, seed=42)
 ```
 
 
@@ -47,8 +47,8 @@ plt.savefig("qol_distribution_mice.png")
 
 ## Beware
 This is a low performance implementation meant for pedagogical purposes only. There are several limitations and improvements that can be made, for research please use one of the available packages for multiple imputation:
-[mice](https://cran.r-project.org/web/packages/mice/index.html)
-[miceRanger](https://github.com/FarrellDay/miceRanger)
-[sklearn.imputer](https://scikit-learn.org/stable/modules/impute.html)
+- [mice](https://cran.r-project.org/web/packages/mice/index.html)
+- [miceRanger](https://github.com/FarrellDay/miceRanger)
+- [sklearn.imputer](https://scikit-learn.org/stable/modules/impute.html)
 
 
