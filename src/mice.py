@@ -104,11 +104,8 @@ def perform_iterations(X, n_iterations=5):
     
     missing_map = np.isnan(X)
     X_imp = np.copy(X)
-    hn4_qol = np.zeros(n_iterations)
+    
     for iteration in range(n_iterations):
-
-        X_imp = fit_covariate_imputation(X_imp, missing_map)
-        
 
         for col in range(X_imp.shape[1]):
             n_samples = np.count_nonzero(missing_map[:, col])
@@ -118,11 +115,8 @@ def perform_iterations(X, n_iterations=5):
                 if(missing_map[row, col]):
                     X_imp[row, col] = samples[n]
                     n+=1
-            
         
-        hn4_qol[iteration] = X_imp[2,3]
-    
-    plt.plot(hn4_qol)
+        X_imp = fit_covariate_imputation(X_imp, missing_map)
     
     return X_imp
     
