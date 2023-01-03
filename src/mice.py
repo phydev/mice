@@ -56,7 +56,7 @@ def gibbs_sampler(x, n_samples, plot=False):
     return sample
 
 
-def replace_nans(X, missing_map, func = np.mean, **kwargs):
+def replace_nans(X, missing_map, func = np.nanmean, **kwargs):
     """
     replace missing values by the mean or other quantity, e.g. np.nanmedian
     """
