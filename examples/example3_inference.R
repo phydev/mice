@@ -17,7 +17,7 @@ diabetes_amp <- read.csv("../data/diabetes_amputed.csv")
 diabetes_imp <- read.csv("../data/diabetes_imputed.csv")
 
 # model for the complete data
-model <- lm(target ~ age + sex + bmi, data = diabetes)
+model_complete <- lm(target ~ age + sex + bmi, data = diabetes)
 
 # models on the imputed data using our python implementation
 models <- diabetes_imp %>%
@@ -39,7 +39,7 @@ pool_fit <- pool(fit)
 
 print("Adjusted R-Squared and 95% CI")
 print("Complete data:")
-print(summary(model)$adj.r.squared)
+print(summary(model_complete)$adj.r.squared)
 print("Imputed data:")
 print(c(mean(r_squared),
         1.96 * sd(r_squared) / sqrt(length(r_squared)))
