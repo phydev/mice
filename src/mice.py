@@ -47,12 +47,7 @@ def gibbs_sampler(x, n_samples, plot=False):
                 n_sample += 1
                 
                 break  
-    if plot:
-        sns.histplot(a, bins="auto", label="Sample", color="red")
-        sns.histplot(df["hn1_age"], bins="auto", label="Data")
-        plt.title("Gibbs sample")
-        plt.legend()
-        plt.show()
+            
     return sample
 
 
@@ -73,6 +68,8 @@ def fit_covariate_imputation(X, missing_map):
     fit imputation model for each variable
     """
     
+    # TODO: implement logistic regression for binary variables 
+
     from sklearn import tree
     X_imp = np.copy(X)
     X = replace_nans(X, missing_map)

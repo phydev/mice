@@ -4,10 +4,9 @@ def test_sample_data():
   import numpy as np
   from src import mice
   
-  df = pd.read_csv("/home/runner/work/mice/mice/tests/data.csv")
-  df_amp = pd.read_csv("/home/runner/work/mice/mice/tests/data_amputed.csv")
+  df = pd.read_csv("/home/runner/work/mice/mice/data/data_test.csv")
+  df_amp = pd.read_csv("/home/runner/work/mice/mice/data/data_test_amputed.csv")
   
-  df_np = df.to_numpy()
   X_amp = df_amp.to_numpy()
 
   m_imputations = 10

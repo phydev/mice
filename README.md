@@ -21,7 +21,7 @@ imp = mice.mice(X, n_iterations = 20, m_imputations = 10, seed=42)
 
 
 ## Example 2: distribution plot for the sample data
-After imputation you should make diagnostic plots and check the distribution of the multiply imputed datasets comparing with the complete case data. Bellow you can find the plot for the example we provide in this directory in the /tests directory:
+After imputation you should make diagnostic plots and check the distribution of the multiply imputed datasets comparing with the complete case data. Bellow you can find the plot for the example we provide in  /tests directory:
 
 ```python
 import seaborn as sns
