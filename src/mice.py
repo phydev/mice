@@ -14,7 +14,7 @@ def compute_ecdf(x):
     
     return A
 
-def gibbs_sampler(x, n_samples, plot=False):
+def ecdf_sampler(x, n_samples, plot=False):
     """
     compute the empirical cumulative density function for the distribution x 
     and draw n_samples
