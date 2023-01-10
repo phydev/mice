@@ -106,7 +106,7 @@ def perform_iterations(X, n_iterations=5):
 
         for col in range(X_imp.shape[1]):
             n_samples = np.count_nonzero(missing_map[:, col])
-            samples = gibbs_sampler(X_imp[:, col], n_samples, plot=False)
+            samples = ecdf_sampler(X_imp[:, col], n_samples, plot=False)
             n = 0
             for row in range(X_imp.shape[0]):
                 if(missing_map[row, col]):
