@@ -1,3 +1,4 @@
+[![Build and Deploy](https://github.com/phydev/mice/actions/workflows/python-app.yml/badge.svg)](https://github.com/phydev/mice/actions/workflows/python-app.yml)
 # MICE - Multiple Imputation by Chained Equations
 Multiple imputation by chained equation implemented from scratch. 
 
